@@ -15,7 +15,7 @@ spec:
         app: sample-app-backend-api
     spec:
       containers:
-      - image: ${ACCOUNT_ID}.dkr.ecr.us-east-1.amazonaws.com/sample-app-backend-api:1.1
+      - image: ${ACCOUNT_ID}.dkr.ecr.us-east-1.amazonaws.com/sample-app-backend-api:latest
         command: ["./main"]
         name: sample-app-backend-api
         ports:
