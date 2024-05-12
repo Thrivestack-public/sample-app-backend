@@ -2,11 +2,12 @@ FROM golang:1.22 as builder
 
 WORKDIR /app
 COPY go.mod ./
-RUN go build -o app .
+COPY . .
+RUN go build -v -o app .
 
 #########
 
-FROM alpine:latest  
+FROM alpine:latest
 
 WORKDIR /root/
 COPY --from=builder /app/app .
