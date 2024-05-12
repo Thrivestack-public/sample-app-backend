@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-app-backend
+  labels:
+    app: sample-app-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sample-app-backend
+  template:
+    metadata:
+      labels:
+        app: sample-app-backend
+    spec:
+      containers:
+      - image: sample-app-backend:latest
+        command: ["./main"]
+        args: ["config", "config/config-local.yml"]
+        name: sample-app-backend
+        ports:
+        - containerPort: 9090
+          name: http-port02
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: sample-app-backend
+  labels:
+    app: sample-app-backend
+spec:
+  selector:
+    app: sample-app-backend
+  type: ClusterIP
+  ports:
+  - name: port02
+    port: 9090
+    targetPort: 9090
