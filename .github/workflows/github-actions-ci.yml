@@ -42,7 +42,7 @@ jobs:
 
     - name: Replace ACCOUNT_ID in deployment YAML
       run: |
-        sed -i 's/\${ACCOUNT_ID}/${{ secrets.ACCOUNT_ID }}/g' deployment.yaml
+        sed -i 's/\${ACCOUNT_ID}/${{ secrets.AWS_ACCOUNT_ID }}/g' deployment.yaml
     
     - name: Deploy to EKS
       run: |
