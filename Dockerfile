@@ -4,6 +4,7 @@ WORKDIR /app
 COPY go.mod ./
 COPY . .
 RUN go build -v -o main .
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -v -o main .
 
 #########
 

@@ -1,11 +1,11 @@
-Name:             sample-app-backend-api-654696584f-rj4s2
+Name:             sample-app-backend-api-868588bdf4-lb4r5
 Namespace:        default
 Priority:         0
 Service Account:  default
 Node:             ip-10-20-9-122.ec2.internal/10.20.9.122
-Start Time:       Sun, 12 May 2024 17:01:57 +0530
+Start Time:       Sun, 12 May 2024 17:06:46 +0530
 Labels:           app=sample-app-backend-api
-                  pod-template-hash=654696584f
+                  pod-template-hash=868588bdf4
                   security.istio.io/tlsMode=istio
                   service.istio.io/canonical-name=sample-app-backend-api
                   service.istio.io/canonical-revision=latest
@@ -18,13 +18,13 @@ Annotations:      kubectl.kubernetes.io/default-container: sample-app-backend-ap
                   sidecar.istio.io/status:
                     {"initContainers":["istio-init"],"containers":["istio-proxy"],"volumes":["workload-socket","credential-socket","workload-certs","istio-env...
 Status:           Running
-IP:               10.20.15.12
+IP:               10.20.5.60
 IPs:
-  IP:           10.20.15.12
-Controlled By:  ReplicaSet/sample-app-backend-api-654696584f
+  IP:           10.20.5.60
+Controlled By:  ReplicaSet/sample-app-backend-api-868588bdf4
 Init Containers:
   istio-init:
-    Container ID:  containerd://1eadc8775541c40f3515510aebe57cf17ace6a69a15864ab005c72b0837ee65a
+    Container ID:  containerd://b260779a32aa56ec98ce0ef9dc4da46ac9060fe98646ac04ea576ac3c74cb916
     Image:         docker.io/istio/proxyv2:1.17.2
     Image ID:      docker.io/istio/proxyv2@sha256:f41745ee1183d3e70b10e82c727c772bee9ac3907fea328043332aaa90d7aa18
     Port:          <none>
@@ -51,8 +51,8 @@ Init Containers:
     State:          Terminated
       Reason:       Completed
       Exit Code:    0
-      Started:      Sun, 12 May 2024 17:01:58 +0530
-      Finished:     Sun, 12 May 2024 17:01:58 +0530
+      Started:      Sun, 12 May 2024 17:06:47 +0530
+      Finished:     Sun, 12 May 2024 17:06:47 +0530
     Ready:          True
     Restart Count:  0
     Limits:
@@ -63,12 +63,12 @@ Init Containers:
       memory:     128Mi
     Environment:  <none>
     Mounts:
-      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-kqfpj (ro)
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-n84j5 (ro)
 Containers:
   sample-app-backend-api:
-    Container ID:  containerd://423b011aeebe7c8aea0d00550f0099be9c12c7e086440faf74d8300dc96aa766
-    Image:         211125658117.dkr.ecr.us-east-1.amazonaws.com/sample-app-backend-api:1.1
-    Image ID:      211125658117.dkr.ecr.us-east-1.amazonaws.com/sample-app-backend-api@sha256:f1c20dcccaede126dcf673b0ab5ee60aab5bbd0112f8847bc9261ef2f758ede5
+    Container ID:  containerd://5efca180dd2eed9891c4437750a22ed920ca8aaa785b4b0c934ccebba90bed38
+    Image:         211125658117.dkr.ecr.us-east-1.amazonaws.com/sample-app-backend-api:latest
+    Image ID:      211125658117.dkr.ecr.us-east-1.amazonaws.com/sample-app-backend-api@sha256:69483436c2c993d666d292e100d3b776e045daf6aa17d1204ceaa6fa54cef2df
     Port:          9090/TCP
     Host Port:     0/TCP
     Command:
@@ -76,20 +76,20 @@ Containers:
     State:          Terminated
       Reason:       Error
       Exit Code:    1
-      Started:      Sun, 12 May 2024 17:02:42 +0530
-      Finished:     Sun, 12 May 2024 17:02:42 +0530
+      Started:      Sun, 12 May 2024 17:07:37 +0530
+      Finished:     Sun, 12 May 2024 17:07:37 +0530
     Last State:     Terminated
       Reason:       Error
       Exit Code:    1
-      Started:      Sun, 12 May 2024 17:02:15 +0530
-      Finished:     Sun, 12 May 2024 17:02:15 +0530
+      Started:      Sun, 12 May 2024 17:07:06 +0530
+      Finished:     Sun, 12 May 2024 17:07:06 +0530
     Ready:          False
     Restart Count:  3
     Environment:    <none>
     Mounts:
-      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-kqfpj (ro)
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-n84j5 (ro)
   istio-proxy:
-    Container ID:  containerd://5d116c4eb19e7ac49d25ed3afae217c74f9796eebd8d7d22d4e688f3e6df8613
+    Container ID:  containerd://76860e6df49c75cb32542ddf30983446679881eb3609807744e9f3b006a257ea
     Image:         docker.io/istio/proxyv2:1.17.2
     Image ID:      docker.io/istio/proxyv2@sha256:f41745ee1183d3e70b10e82c727c772bee9ac3907fea328043332aaa90d7aa18
     Port:          15090/TCP
@@ -105,7 +105,7 @@ Containers:
       --concurrency
       2
     State:          Running
-      Started:      Sun, 12 May 2024 17:01:59 +0530
+      Started:      Sun, 12 May 2024 17:06:48 +0530
     Ready:          True
     Restart Count:  0
     Limits:
@@ -119,7 +119,7 @@ Containers:
       JWT_POLICY:                    third-party-jwt
       PILOT_CERT_PROVIDER:           istiod
       CA_ADDR:                       istiod.istio-system.svc:15012
-      POD_NAME:                      sample-app-backend-api-654696584f-rj4s2 (v1:metadata.name)
+      POD_NAME:                      sample-app-backend-api-868588bdf4-lb4r5 (v1:metadata.name)
       POD_NAMESPACE:                 default (v1:metadata.namespace)
       INSTANCE_IP:                    (v1:status.podIP)
       SERVICE_ACCOUNT:                (v1:spec.serviceAccountName)
@@ -143,7 +143,7 @@ Containers:
       /var/lib/istio/data from istio-data (rw)
       /var/run/secrets/credential-uds from credential-socket (rw)
       /var/run/secrets/istio from istiod-ca-cert (rw)
-      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-kqfpj (ro)
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-n84j5 (ro)
       /var/run/secrets/tokens from istio-token (rw)
       /var/run/secrets/workload-spiffe-credentials from workload-certs (rw)
       /var/run/secrets/workload-spiffe-uds from workload-socket (rw)
@@ -186,7 +186,7 @@ Volumes:
     Type:      ConfigMap (a volume populated by a ConfigMap)
     Name:      istio-ca-root-cert
     Optional:  false
-  kube-api-access-kqfpj:
+  kube-api-access-n84j5:
     Type:                    Projected (a volume that contains injected data from multiple sources)
     TokenExpirationSeconds:  3607
     ConfigMapName:           kube-root-ca.crt
@@ -199,36 +199,36 @@ Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists fo
 Events:
   Type     Reason           Age                From               Message
   ----     ------           ----               ----               -------
-  Warning  PolicyViolation  57s                kyverno-admission  (combined from similar events): policy only-trustworthy-registries-set-root/only-allow-trusted-images fail: validation failure: Images with root user are not allowed to be pulled from any registry other than ghcr.io.
-  Warning  PolicyViolation  57s                kyverno-admission  policy require-non-root-groups/check-supplementalgroups pass: validation rule 'check-supplementalgroups' passed.
-  Normal   Scheduled        57s                default-scheduler  Successfully assigned default/sample-app-backend-api-654696584f-rj4s2 to ip-10-20-9-122.ec2.internal
-  Warning  PolicyViolation  57s                kyverno-admission  policy require-pod-priorityclassname/check-priorityclassname fail: validation error: Pods must define the priorityClassName field. rule check-priorityclassname failed at path /spec/priorityClassName/
-  Warning  PolicyViolation  57s                kyverno-admission  policy restrict-image-registries/validate-registries fail: validation error: Unknown image registry. rule validate-registries failed at path /spec/initContainers/0/image/
-  Warning  PolicyViolation  57s                kyverno-admission  policy require-non-root-groups/check-runasgroup fail: validation error: Running with root group IDs is disallowed. The fields spec.securityContext.runAsGroup, spec.containers[*].securityContext.runAsGroup, spec.initContainers[*].securityContext.runAsGroup, and spec.ephemeralContainers[*].securityContext.runAsGroup must be set to a value greater than zero.          . rule check-runasgroup[0] failed at path /spec/initContainers/0/securityContext/runAsGroup/ rule check-runasgroup[1] failed at path /spec/initContainers/0/securityContext/runAsGroup/
-  Warning  PolicyViolation  57s                kyverno-admission  policy require-non-root-groups/check-fsgroup pass: validation rule 'check-fsgroup' passed.
-  Warning  PolicyViolation  57s                kyverno-admission  policy require-ro-rootfs/validate-readOnlyRootFilesystem fail: validation error: Root filesystem must be read-only. rule validate-readOnlyRootFilesystem failed at path /spec/containers/0/securityContext/
-  Warning  PolicyViolation  57s                kyverno-admission  policy require-requests-limits/validate-resources fail: validation error: CPU and memory resource requests and limits are required. rule validate-resources failed at path /spec/containers/0/resources/limits/
-  Warning  PolicyViolation  57s                kyverno-admission  policy restrict-automount-sa-token/validate-automountServiceAccountToken fail: validation error: Auto-mounting of Service Account tokens is not allowed. rule validate-automountServiceAccountToken failed at path /spec/automountServiceAccountToken/
-  Warning  PolicyViolation  57s                kyverno-admission  policy require-pod-probes/validate-probes fail: validation failure: Liveness, readiness, or startup probes are required for all containers.
-  Normal   Pulled           56s                kubelet            Container image "docker.io/istio/proxyv2:1.17.2" already present on machine
-  Normal   Created          56s                kubelet            Created container istio-init
-  Normal   Started          56s                kubelet            Started container istio-init
-  Normal   Pulled           55s                kubelet            Successfully pulled image "211125658117.dkr.ecr.us-east-1.amazonaws.com/sample-app-backend-api:1.1" in 115.716643ms (115.730174ms including waiting)
-  Normal   Pulled           55s                kubelet            Container image "docker.io/istio/proxyv2:1.17.2" already present on machine
-  Normal   Created          55s                kubelet            Created container istio-proxy
-  Normal   Started          55s                kubelet            Started container istio-proxy
-  Normal   Pulled           54s                kubelet            Successfully pulled image "211125658117.dkr.ecr.us-east-1.amazonaws.com/sample-app-backend-api:1.1" in 135.865062ms (135.873835ms including waiting)
-  Normal   Pulled           39s                kubelet            Successfully pulled image "211125658117.dkr.ecr.us-east-1.amazonaws.com/sample-app-backend-api:1.1" in 135.808255ms (135.829547ms including waiting)
-  Normal   Started          39s (x3 over 55s)  kubelet            Started container sample-app-backend-api
-  Warning  PolicyViolation  26s                kyverno-scan       policy only-trustworthy-registries-set-root/only-allow-trusted-images fail: validation failure: Images with root user are not allowed to be pulled from any registry other than ghcr.io.
-  Warning  PolicyViolation  26s                kyverno-scan       policy require-pod-priorityclassname/check-priorityclassname fail: validation error: Pods must define the priorityClassName field. rule check-priorityclassname failed at path /spec/priorityClassName/
-  Warning  PolicyViolation  26s                kyverno-scan       policy restrict-automount-sa-token/validate-automountServiceAccountToken fail: validation error: Auto-mounting of Service Account tokens is not allowed. rule validate-automountServiceAccountToken failed at path /spec/automountServiceAccountToken/
-  Warning  PolicyViolation  26s                kyverno-scan       policy require-requests-limits/validate-resources fail: validation error: CPU and memory resource requests and limits are required. rule validate-resources failed at path /spec/containers/0/resources/limits/
-  Warning  PolicyViolation  26s                kyverno-scan       policy require-ro-rootfs/validate-readOnlyRootFilesystem fail: validation error: Root filesystem must be read-only. rule validate-readOnlyRootFilesystem failed at path /spec/containers/0/securityContext/
-  Warning  PolicyViolation  26s                kyverno-scan       policy restrict-image-registries/validate-registries fail: validation error: Unknown image registry. rule validate-registries failed at path /spec/initContainers/0/image/
-  Warning  PolicyViolation  26s                kyverno-scan       policy require-non-root-groups/check-runasgroup fail: validation error: Running with root group IDs is disallowed. The fields spec.securityContext.runAsGroup, spec.containers[*].securityContext.runAsGroup, spec.initContainers[*].securityContext.runAsGroup, and spec.ephemeralContainers[*].securityContext.runAsGroup must be set to a value greater than zero.          . rule check-runasgroup[0] failed at path /spec/initContainers/0/securityContext/runAsGroup/ rule check-runasgroup[1] failed at path /spec/initContainers/0/securityContext/runAsGroup/
-  Warning  PolicyViolation  26s                kyverno-scan       policy require-pod-probes/validate-probes fail: validation failure: Liveness, readiness, or startup probes are required for all containers.
-  Warning  BackOff          24s (x4 over 53s)  kubelet            Back-off restarting failed container sample-app-backend-api in pod sample-app-backend-api-654696584f-rj4s2_default(ecd039d8-c1af-4e76-a3fe-63d025831364)
-  Normal   Created          12s (x4 over 55s)  kubelet            Created container sample-app-backend-api
-  Normal   Pulling          12s (x4 over 55s)  kubelet            Pulling image "211125658117.dkr.ecr.us-east-1.amazonaws.com/sample-app-backend-api:1.1"
-  Normal   Pulled           12s                kubelet            Successfully pulled image "211125658117.dkr.ecr.us-east-1.amazonaws.com/sample-app-backend-api:1.1" in 125.544803ms (125.561327ms including waiting)
+  Warning  PolicyViolation  63s                kyverno-admission  policy require-pod-priorityclassname/check-priorityclassname fail: validation error: Pods must define the priorityClassName field. rule check-priorityclassname failed at path /spec/priorityClassName/
+  Warning  PolicyViolation  63s                kyverno-admission  (combined from similar events): policy restrict-image-registries/validate-registries fail: validation error: Unknown image registry. rule validate-registries failed at path /spec/initContainers/0/image/
+  Warning  PolicyViolation  63s                kyverno-admission  policy require-non-root-groups/check-fsgroup pass: validation rule 'check-fsgroup' passed.
+  Warning  PolicyViolation  63s                kyverno-admission  policy require-ro-rootfs/validate-readOnlyRootFilesystem fail: validation error: Root filesystem must be read-only. rule validate-readOnlyRootFilesystem failed at path /spec/containers/0/securityContext/
+  Warning  PolicyViolation  63s                kyverno-admission  policy require-non-root-groups/check-runasgroup fail: validation error: Running with root group IDs is disallowed. The fields spec.securityContext.runAsGroup, spec.containers[*].securityContext.runAsGroup, spec.initContainers[*].securityContext.runAsGroup, and spec.ephemeralContainers[*].securityContext.runAsGroup must be set to a value greater than zero.          . rule check-runasgroup[0] failed at path /spec/initContainers/0/securityContext/runAsGroup/ rule check-runasgroup[1] failed at path /spec/initContainers/0/securityContext/runAsGroup/
+  Warning  PolicyViolation  63s                kyverno-admission  policy require-non-root-groups/check-supplementalgroups pass: validation rule 'check-supplementalgroups' passed.
+  Warning  PolicyViolation  63s                kyverno-admission  policy restrict-automount-sa-token/validate-automountServiceAccountToken fail: validation error: Auto-mounting of Service Account tokens is not allowed. rule validate-automountServiceAccountToken failed at path /spec/automountServiceAccountToken/
+  Warning  PolicyViolation  63s                kyverno-admission  policy require-pod-probes/validate-probes fail: validation failure: Liveness, readiness, or startup probes are required for all containers.
+  Warning  PolicyViolation  63s                kyverno-admission  policy require-requests-limits/validate-resources fail: validation error: CPU and memory resource requests and limits are required. rule validate-resources failed at path /spec/containers/0/resources/limits/
+  Normal   Scheduled        63s                default-scheduler  Successfully assigned default/sample-app-backend-api-868588bdf4-lb4r5 to ip-10-20-9-122.ec2.internal
+  Warning  PolicyViolation  63s                kyverno-admission  policy only-trustworthy-registries-set-root/only-allow-trusted-images fail: validation failure: Images with root user are not allowed to be pulled from any registry other than ghcr.io.
+  Normal   Started          62s                kubelet            Started container istio-init
+  Normal   Created          62s                kubelet            Created container istio-init
+  Normal   Pulled           62s                kubelet            Container image "docker.io/istio/proxyv2:1.17.2" already present on machine
+  Normal   Pulled           61s                kubelet            Successfully pulled image "211125658117.dkr.ecr.us-east-1.amazonaws.com/sample-app-backend-api:latest" in 127.747783ms (127.763853ms including waiting)
+  Normal   Pulled           61s                kubelet            Successfully pulled image "211125658117.dkr.ecr.us-east-1.amazonaws.com/sample-app-backend-api:latest" in 520.352684ms (520.368427ms including waiting)
+  Normal   Pulled           61s                kubelet            Container image "docker.io/istio/proxyv2:1.17.2" already present on machine
+  Normal   Started          61s                kubelet            Started container istio-proxy
+  Normal   Created          61s                kubelet            Created container istio-proxy
+  Normal   Created          43s (x3 over 61s)  kubelet            Created container sample-app-backend-api
+  Normal   Started          43s (x3 over 61s)  kubelet            Started container sample-app-backend-api
+  Normal   Pulled           43s                kubelet            Successfully pulled image "211125658117.dkr.ecr.us-east-1.amazonaws.com/sample-app-backend-api:latest" in 119.489359ms (119.498142ms including waiting)
+  Warning  PolicyViolation  33s                kyverno-scan       policy require-non-root-groups/check-runasgroup fail: validation error: Running with root group IDs is disallowed. The fields spec.securityContext.runAsGroup, spec.containers[*].securityContext.runAsGroup, spec.initContainers[*].securityContext.runAsGroup, and spec.ephemeralContainers[*].securityContext.runAsGroup must be set to a value greater than zero.          . rule check-runasgroup[0] failed at path /spec/initContainers/0/securityContext/runAsGroup/ rule check-runasgroup[1] failed at path /spec/initContainers/0/securityContext/runAsGroup/
+  Warning  PolicyViolation  33s                kyverno-scan       policy require-pod-probes/validate-probes fail: validation failure: Liveness, readiness, or startup probes are required for all containers.
+  Warning  PolicyViolation  32s                kyverno-scan       policy only-trustworthy-registries-set-root/only-allow-trusted-images fail: validation failure: Images with root user are not allowed to be pulled from any registry other than ghcr.io.
+  Warning  PolicyViolation  32s                kyverno-scan       policy require-pod-priorityclassname/check-priorityclassname fail: validation error: Pods must define the priorityClassName field. rule check-priorityclassname failed at path /spec/priorityClassName/
+  Warning  PolicyViolation  32s                kyverno-scan       policy restrict-automount-sa-token/validate-automountServiceAccountToken fail: validation error: Auto-mounting of Service Account tokens is not allowed. rule validate-automountServiceAccountToken failed at path /spec/automountServiceAccountToken/
+  Warning  PolicyViolation  32s                kyverno-scan       policy require-requests-limits/validate-resources fail: validation error: CPU and memory resource requests and limits are required. rule validate-resources failed at path /spec/containers/0/resources/limits/
+  Warning  PolicyViolation  32s                kyverno-scan       policy require-ro-rootfs/validate-readOnlyRootFilesystem fail: validation error: Root filesystem must be read-only. rule validate-readOnlyRootFilesystem failed at path /spec/containers/0/securityContext/
+  Warning  PolicyViolation  32s                kyverno-scan       policy restrict-image-registries/validate-registries fail: validation error: Unknown image registry. rule validate-registries failed at path /spec/initContainers/0/image/
+  Warning  BackOff          27s (x5 over 60s)  kubelet            Back-off restarting failed container sample-app-backend-api in pod sample-app-backend-api-868588bdf4-lb4r5_default(680337ba-17d2-46b5-a60c-861a7f3f0447)
+  Normal   Pulling          12s (x4 over 62s)  kubelet            Pulling image "211125658117.dkr.ecr.us-east-1.amazonaws.com/sample-app-backend-api:latest"
+  Normal   Pulled           12s                kubelet            Successfully pulled image "211125658117.dkr.ecr.us-east-1.amazonaws.com/sample-app-backend-api:latest" in 118.258038ms (118.273698ms including waiting)
