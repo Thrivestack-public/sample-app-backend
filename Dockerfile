@@ -1,7 +1,7 @@
 FROM golang:1.18 as builder
 
 WORKDIR /app
-COPY go.mod go.sum ./
+COPY go.mod ./
 RUN go build -o app .
 
 #########
