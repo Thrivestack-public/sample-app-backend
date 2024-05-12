@@ -39,3 +39,46 @@ spec:
   - name: port02
     port: 9090
     targetPort: 9090
+
+---
+
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: sample-app-backend-api-vs
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - saas-gateway
+  http:
+  - match:
+    - uri:
+        exact: /accountMgmt
+    - uri:
+        prefix: /accountMgmt/
+    route:
+    - destination:
+        host: sample-app-backend-api
+        port:
+          number: 9090
+    corsPolicy:
+      allowOrigins:
+      - exact: "*"
+      allowMethods:
+      - PUT
+      - GET
+      - OPTIONS
+      - POST
+      allowHeaders:
+      - X-Custom-Header
+      - content-type
+      - authorization
+      - Access-Control-Allow-Origin
+      - Access-Control-Allow-Methods
+      - Access-Control-Allow-Headers
+      exposeHeaders:
+      - X-Expose-Header
+      maxAge: 24h
+      allowCredentials: true
+
