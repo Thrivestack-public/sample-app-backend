@@ -17,6 +17,17 @@ jobs:
         version: 'v1.24.0'
       id: install
 
+    - name: Configure AWS Credentials 2
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-region: us-east-1
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
+        role-to-assume: arn:aws:iam::211125658117:user/sample-app-deployment-user
+    - name: get caller identity2
+      run: |
+        aws sts get-caller-identity
+        
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
