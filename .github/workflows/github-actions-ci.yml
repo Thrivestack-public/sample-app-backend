@@ -39,8 +39,8 @@ jobs:
 
     - name: Update kube config
       run: |
-        aws sts get-caller-identity | jq -r '.Account'
-        aws eks update-kubeconfig --region ${{ secrets.AWS_REGION }} --name "thrivestack-dev-eks-cluster" && kubectl get nodes
+        x=$(aws sts get-caller-identity | jq -r '.Account')
+        echo $x
 
     - name: Replace ACCOUNT_ID in deployment YAML
       run: |
