@@ -38,7 +38,9 @@ jobs:
         docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
 
     - name: Update kube config
-      run: aws eks update-kubeconfig --region ${{ secrets.AWS_REGION }} --name "thrivestack-dev-eks-cluster" && kubectl get nodes
+      run: |
+        aws sts get-caller-identity | jq -r '.Account'
+        aws eks update-kubeconfig --region ${{ secrets.AWS_REGION }} --name "thrivestack-dev-eks-cluster" && kubectl get nodes
 
     - name: Replace ACCOUNT_ID in deployment YAML
       run: |
